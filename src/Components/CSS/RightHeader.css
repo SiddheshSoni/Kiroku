@@ -1,0 +1,8 @@
+.Rheader{
+    height:100px ;
+    border-bottom: 1px solid #aabde2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.8rem ;
+}

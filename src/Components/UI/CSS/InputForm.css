@@ -1,0 +1,22 @@
+.cust-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.input-modal-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 999;
+}
+.input-form{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(211, 202, 202);
+}

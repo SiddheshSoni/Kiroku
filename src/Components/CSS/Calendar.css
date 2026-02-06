@@ -1,0 +1,25 @@
+.cal{
+    background-color:  #F4F6F8;
+    color: black;    
+  }
+  .fc {
+    padding: 20px;
+    border-radius: 20px;
+    background:  #F4F6F2;
+    color: rgb(0, 0, 0);
+  }
+  
+  .fc-col-header-cell-cushion {
+    color: #000000 !important;
+    
+  }
+  
+  .fc-daygrid-day-number {
+    color: #000000 !important;
+    padding: 5px !important;
+  }
+  .fc-daygrid-day-frame {
+    height: 120px !important;
+    overflow-y: auto;
+    scrollbar-width:none;
+}
