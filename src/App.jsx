@@ -1,16 +1,20 @@
-
 import React from 'react';
 import './App.css'
-import InputForm from './Components/UI/InputForm';
 import Layout from './Layout';
-import { Button } from 'react-bootstrap';
+import { Navigate, Route, Routes } from 'react-router';
+import Todo from './Pages/Todo';
+import Expense from './Pages/Expense';
 
 function App() {
-  
   return (
-    <>
-     <Layout />
-    </>
+    <Routes >
+      <Route element={<Layout />}>
+        <Route path="/Todo" element={<Todo />} />
+        <Route path="/Expense" element={<Expense />} />
+        <Route path="*" element={<Navigate to="/Todo" />} />
+      </Route>
+    </Routes>
+    
   )
 }
 

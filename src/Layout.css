@@ -16,7 +16,7 @@
   border-right: 1px solid #E5E7EB;
 }
 
-.todo-wrapper {
+.right-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;

@@ -16,6 +16,7 @@
     "@fullcalendar/interaction": "^6.1.20",
     "@fullcalendar/react": "^6.1.20",
     "@mui/material": "^7.3.7",
+    "@mui/x-charts": "^8.27.0",
     "@reduxjs/toolkit": "^2.11.2",
     "bootstrap": "^5.3.8",
     "fullcalendar": "^6.1.20",

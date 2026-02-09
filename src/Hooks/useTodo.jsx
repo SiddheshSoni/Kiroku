@@ -1,10 +1,8 @@
-
 import React, { useMemo } from 'react'
 
-const useTodos = (todos) => {
+const useTodo = (todos) => {
     const today = new Date().toLocaleDateString("en-CA");
-
-    
+        
     const dailyTasks = useMemo(()=>{
         return todos.filter( todo => todo.isDaily === true).map(td => ({...td, isCompleted: td.lastCompletedDate === today ? true : false}));
     },[todos, today]);
@@ -16,4 +14,4 @@ const useTodos = (todos) => {
     return {dailyTasks, regularTasks };
 }
 
-export default useTodos;
+export default useTodo;

@@ -1,0 +1,34 @@
+.expense-list-card{
+    font-size: 1.4rem;
+    width: 90%;
+    align-self: center;
+    background-color: white;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.expense-item{
+    display: flex;
+    justify-content: space-between  ;
+    margin-bottom: 5px;
+}.right{
+    opacity: 80%;
+}
+
+.expense-total{
+    /* font-weight: 500; */
+    margin-top: 20px;
+}
+
+.expense-list-title-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E5E7EB;
+    margin-bottom: 5px;
+}
+h5{
+    transform: translateY(10%);
+}

@@ -24,7 +24,6 @@ const RequestWrapper = async (path="todos.json", {method='GET', body=null}={}) =
             }
             return { ok: false, error: errorMessage };
         }
-
     }catch(err){
         console.log(err);
     };
