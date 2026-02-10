@@ -3,8 +3,7 @@
     overflow-y: auto;
     min-height: 0;
     scrollbar-width: thin;
-    scroll-behavior: smooth;
-    
+    scroll-behavior: smooth;   
 }
 
 .todos h3{

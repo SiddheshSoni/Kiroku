@@ -1,4 +1,11 @@
-body{
-    font-family: "Funnel Sans", sans-serif;
-    background-color:  #F4F6F8 ;
+html, body, #root {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  font-family: "Funnel Sans", sans-serif;
+  background-color: #F4F6F8;
 }

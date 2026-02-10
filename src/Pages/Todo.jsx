@@ -1,46 +1,51 @@
-import React, { useEffect } from 'react'
-import CalendarPanel from '../Components/Calendar'
+import React, { useEffect } from "react";
+import CalendarPanel from "../Components/Calendar";
 import "../Layout.css";
-import Todos from '../Components/Todos';
-import RightHeader from '../Components/RightHeader';
-import { useDispatch, useSelector } from 'react-redux';
-import useTodo from '../Hooks/useTodo';
-import { GetTodosThunk } from '../Store/TodoSlice';
-import PageLayout from './PageLayout';
-
+import Todos from "../Components/Todos";
+import { useDispatch, useSelector } from "react-redux";
+import useTodo from "../Hooks/useTodo";
+import { GetTodosThunk } from "../Store/TodoSlice";
+import PageLayout from "./PageLayout";
+import { motion as Motion } from "framer-motion";
 
 const Todo = () => {
-    const dispatch = useDispatch();
-    const { todos:tasks  } = useSelector(state => state.todo);
-    const { dailyTasks, regularTasks } = useTodo(tasks || []) ; //defining a custom hook to get all the necessary data and filtering it
+  const dispatch = useDispatch();
+  const { todos: tasks } = useSelector((state) => state.todo);
+  const { dailyTasks, regularTasks } = useTodo(tasks || []); //defining a custom hook to get all the necessary data and filtering it
 
-    useEffect(()=>{        
-        dispatch(GetTodosThunk());
-    },[dispatch]);
-
+  useEffect(() => {
+    dispatch(GetTodosThunk());
+  }, [dispatch]);
+  const slideVariants = {
+    initial: { x: "100%", opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+    exit: { x: "-100%", opacity: 0 },
+  };
   return (
-    <>  
-      <PageLayout 
+    <Motion.div
+      variants={slideVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.3 }}
+    >
+      <PageLayout
         ExpenseMode={true}
-
         left={<CalendarPanel ExpenseMode={false} />}
-        
         right={
           <>
-          <RightHeader/>
-            <Todos 
-              dailyTasks = {dailyTasks}
-              regularTasks = {regularTasks}
-            /> 
+            <Todos dailyTasks={dailyTasks} regularTasks={regularTasks} />
           </>
         }
       />
-    </>
-  )
-}
+    </Motion.div>
+  );
+};
 
 export default Todo;
-{/* <div className='MainPage-Layout'>
+
+{
+  /* <div className='MainPage-Layout'>
   <div className='cal-wrapper'>
     <CalendarPanel mode={false}/>
   </div>
@@ -51,4 +56,5 @@ export default Todo;
       regularTasks = {regularTasks}
     /> 
   </div>
-</div> */}
+</div> */
+}

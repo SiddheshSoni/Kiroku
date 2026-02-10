@@ -1,16 +1,13 @@
 .MainPage-Layout {
-  height: 100vh;
+  flex:1;
   width: 100%;
   display: grid;
   overflow: hidden;
   grid-template-columns: 60% 40%;
-
-  /* background-color: ; */
 }
 .MainPage-Layout > div {
   min-height: 0;
 }
-
 
 .cal-wrapper {
   border-right: 1px solid #E5E7EB;
@@ -23,5 +20,4 @@
   width: 100%;
   min-height: 0;
   overflow: hidden; /* IMPORTANT */
-  
 }

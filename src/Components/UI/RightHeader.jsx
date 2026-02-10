@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./CSS/RightHeader.css"
-import { GetStreak } from '../API/streakDB';
+import { GetStreak } from '../../API/streakDB';
 
 const RightHeader = () => {
   const [streak, setStreak] = useState(0);
@@ -16,6 +16,7 @@ const RightHeader = () => {
         <div className='greetings'>
             Hello Siddhesh! 👋
         </div>
+        
         <div className='streak'>
             <span className=' fw-medium'>Streak</span> : {streak}🔥 
         </div>

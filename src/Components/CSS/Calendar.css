@@ -1,9 +1,12 @@
 .cal{
     background-color:  #F4F6F8;
-    color: black;    
+    color: black; 
+    flex: 1;   
+    min-height: 0;
+  overflow: hidden;
   }
   .fc {
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     background:  #F4F6F2;
     color: rgb(0, 0, 0);
