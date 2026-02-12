@@ -1,0 +1,70 @@
+.welcome-wrapper {
+  height: 100%;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 50% 50%;
+ background: radial-gradient(
+  circle at 30% 40%,
+  #2b2e4a 0%,
+  #1f2235 40%,
+  #151728 100%
+);
+
+}
+
+.left-part{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color:  #6366F1; */
+}
+/* ////// */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+#welcome-logo{
+  animation: float 3s ease-in-out infinite;
+}
+/* ////// */
+.right-part{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.signup-form {
+  background-color: #f8f9ff;
+  width: 420px;
+  padding: 32px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+}
+.option{
+    margin-top: 20px;
+    background-color: aqua;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    border-radius: 10px; 
+}
+.sub-btn{
+  background: linear-gradient(135deg, #5b7cfa, #7c5dfa);
+
+}
+.pass-wrapper{
+    position: relative;
+}
+.pass-icon{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}

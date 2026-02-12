@@ -31,7 +31,7 @@ const Expense = () => {
         ExpenseMode={true}
         left={
           <>
-            <CalendarPanel ExpenseMode={true} />
+            <CalendarPanel ExpenseMode={true} items={expenses} />
             <ExpenseGraph
               expense={categorizedExpense}
               total={monthlyTotal}

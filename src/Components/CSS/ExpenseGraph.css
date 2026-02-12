@@ -1,6 +1,7 @@
 .expense-graph-wrapper{
     position: relative;
-    background-color: white;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     border-radius: 8px;
     margin: 10px;
     padding: 20px;
@@ -39,7 +40,7 @@
   height: 40px;
   width: 30px;
 
-  color: rgb(253, 252, 252);
+  color: rgb(255, 255, 255);
   background-color: rgb(56, 100, 100);
   cursor: pointer;
 }
@@ -66,7 +67,8 @@
 }
 
 .exp-title{
+    font-size: 1.6rem;
     position: absolute;
     bottom: 5%;
-    left: 3%;
+    right: 20%;
 }

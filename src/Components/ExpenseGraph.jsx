@@ -58,7 +58,7 @@ const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
                 />
             </div>
         </div>
-        <div className='exp-title' >Total: <span className=' fw-bold'>  ₹{total}</span></div>
+        <div className='exp-title' ><span>Total:</span> <span className=' fw-bold'>  ₹{total}</span></div>
     </div>
   )
 }

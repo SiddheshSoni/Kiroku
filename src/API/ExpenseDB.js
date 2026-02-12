@@ -1,4 +1,4 @@
-const BASE_URL = `https://daily-todos-c93cd-default-rtdb.asia-southeast1.firebasedatabase.app/`;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const RequestWrapper = async (path= 'expenses.json',{method='GET', body= null}={}) =>{
     const url = BASE_URL+path;

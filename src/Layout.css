@@ -22,3 +22,9 @@
   min-height: 0;
   overflow: hidden; /* IMPORTANT */
 }
+
+#logobg{
+  position: absolute;
+  bottom: 2px;
+  z-index: 999;
+}

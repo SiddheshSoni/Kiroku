@@ -1,5 +1,6 @@
 .Rheader{
     height:100px ;
+    color: var(--text-primary);
     border-bottom: 1px solid #aabde2;
     display: flex;
     justify-content: space-around;

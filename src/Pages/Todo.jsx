@@ -16,16 +16,12 @@ const Todo = () => {
   useEffect(() => {
     dispatch(GetTodosThunk());
   }, [dispatch]);
-  // const slideVariants = {
-  //   initial: { x: "100%", opacity: 0 },
-  //   animate: { x: 0, opacity: 1 },
-  //   exit: { x: "-100%", opacity: 0 },
-  // };
+ 
   return (
     <>
       <PageLayout
-        ExpenseMode={true}
-        left={<CalendarPanel ExpenseMode={false} />}
+        ExpenseMode={false}
+        left={<CalendarPanel ExpenseMode={false} items ={tasks}/>}
         right={
           <>
             <Todos dailyTasks={dailyTasks} regularTasks={regularTasks} />

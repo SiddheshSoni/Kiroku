@@ -5,6 +5,67 @@
     flex: 1;
     height: 50px;
     padding: 0px 25px;
-    background-color: #aabde2;
+    background-color: var(--accent);
 }
 
+.app-title{
+    font-family: "Noto Serif JP", serif;
+  font-size: 1.6rem;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+#logo{
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+.logout-b{
+    display: flex;
+}
+.theme-toggle{
+    position: relative;
+    font-size: 1.3rem;
+    margin: 0px 15px;
+    padding: 5px;
+    background-color: rgb(103, 140, 172);
+    border-radius: 50px;
+    height: 40px;
+    /* margin: 5px 0px; */
+    z-index: 1;
+}
+.theme-toggle button{
+  background: transparent;
+  border: none;
+  width: 50px;
+  height: 30px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* .theme-toggle .active{
+    color: rgb(12, 12, 12);
+} */
+.theme-toggle .pill {
+  z-index: -1;
+  position: absolute;
+  padding: 2px;
+  top: 5px;
+  left: 5px;
+  width: 50px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  opacity: 50%;
+}
+.theme-toggle .pill.left{
+    transform: translateX(0%);
+    background-color: black;
+    color: white;
+}
+.theme-toggle .pill.right{
+    transform: translateX(100%);
+    background-color: beige;
+    color: black;
+}

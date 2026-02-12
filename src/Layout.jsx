@@ -6,12 +6,14 @@ import TopHeader from './Components/UI/TopHeader';
 
 const Layout = () => {
   const location = useLocation();
+
   return (
     <>
         <TopHeader />
       <AnimatePresence mode='wait' >
       <Outlet key={location.pathname}/>
       </AnimatePresence>
+      <img id='logobg' src='/Kiroku.png' />
     </>
   )
 }

@@ -7,5 +7,5 @@ html, body, #root {
 body {
   display: flex;
   font-family: "Funnel Sans", sans-serif;
-  background-color: #F4F6F8;
+  background-color: var(--bg-card);
 }

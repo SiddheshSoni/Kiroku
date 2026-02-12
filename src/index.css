@@ -1,0 +1,13 @@
+:root {
+  --bg-primary: white;
+  --bg-card: #F4F6F8;
+  --text-primary: #1f2937;
+  --accent: #aabde2;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1f2235;
+  --bg-card: #1e293b;
+  --text-primary: #e2e8f0;
+  --accent: #4c5f91;
+}

@@ -2,25 +2,24 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import "./CSS/Calendar.css"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { GetTodosThunk } from '../Store/TodoSlice';
 import { useEffect, useState } from 'react';
 import InputForm from './UI/InputForm';
 
-export default function CalendarPanel({ ExpenseMode }) {
+export default function CalendarPanel({ items, ExpenseMode }) {
   const dispatch = useDispatch();
-  const { todos:tasks  } = useSelector(state => state.todo);
-  const { expenses } = useSelector(state=> state.expense);
+  // const { todos:tasks  } = useSelector(state => state.todo);
+  // const { expenses } = useSelector(state=> state.expense);
+  // const items = ExpenseMode ? expenses : tasks;
   const [showModal, setShowModal]= useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
-  const items = ExpenseMode ? expenses : tasks;
 
   useEffect(()=>{        
     dispatch(GetTodosThunk());
   },[dispatch]);
   
   function handleDateClick(info) {
-    // setSelectedDate(info.dateStr) // send date 
     console.log(info.dateStr)
     setSelectedDate(info.dateStr)
     setShowModal(true);

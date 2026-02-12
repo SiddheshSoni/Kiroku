@@ -1,8 +1,9 @@
 .expense-list-card{
     font-size: 1.4rem;
     width: 90%;
+    color: var(--text-primary);
     align-self: center;
-    background-color: white;
+    background-color: var(--bg-primary);
     margin: 20px;
     padding: 25px;
     border-radius: 8px;
