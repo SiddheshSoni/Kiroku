@@ -1,6 +1,7 @@
 import React from 'react'
 import "./CSS/ExpenseGraph.css"
 import { PieChart } from '@mui/x-charts/PieChart';
+// import { categories as cat } from './helper/Categories';
 
 const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
   const months = ["Jan", "Feb" , "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -11,12 +12,14 @@ const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
     newDt.setMonth( newDt.getMonth() - 1);
     setSelectedMonth(newDt.toLocaleDateString("en-CA").slice(0,7));
   };
+
   const nextMonth = () =>{
     console.log("a")
     const newDt = new Date(selectedMonth + "-01");
     newDt.setMonth( newDt.getMonth() + 1);
     setSelectedMonth(newDt.toLocaleDateString("en-CA").slice(0,7));
   };
+
   return (
     <div className='expense-graph-wrapper'>
         <div className='exp-title-bar'>
@@ -25,16 +28,16 @@ const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
             <div>
               {months[idx]} {selectedMonth.slice(0, 4)}
             </div>
-            <div>
-            <button className='btn-arr' onClick={()=> prevMonth()} >{'<'}</button>
-            <button className='btn-arr' onClick={()=> nextMonth()}>{'>'}</button>
+            <div className='d-flex rounded-1 overflow-hidden'>
+              <i className="btns fa-solid fa-angle-left" onClick={()=> prevMonth()}></i>
+              <i className="btns fa-solid fa-angle-right" onClick={()=> nextMonth()}></i>
             </div>
           </div>
         </div>
         <div className='expense-ui'>
             <div className="categorized-exp">
               {expense && expense.map(exp=>(
-                <div className='exp-cat' key={exp.id}> <span>🔥{exp.category}</span> <span>₹{exp.total}</span> </div>
+                <div className='exp-cat' key={exp.id}> <span>{exp.category.emoji} {exp.category.label}</span> <span>₹{exp.total}</span> </div>
               ))}
             </div>
             <div className="piechart">
@@ -46,12 +49,12 @@ const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
                       data:expense.map(item => ({
                         id: item.id,
                         value: item.total,
-                        label: item.category,
+                        label: item.category.label,
                       })),
                     }
                   ]}
-                  width={250}
-                  height={250}
+                  width={300}
+                  height={300}
                 />
             </div>
         </div>

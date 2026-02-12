@@ -25,20 +25,8 @@ const Expense = () => {
     selectedMonth,
   );
 
-  const slideVariants = {
-    initial: { x: "100%", opacity: 0 },
-    animate: { x: 0, opacity: 1 },
-    exit: { x: "-100%", opacity: 0 },
-  };
-
   return (
-    <Motion.div
-      variants={slideVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.3 }}
-    >
+    <>
       <PageLayout
         ExpenseMode={true}
         left={
@@ -63,7 +51,7 @@ const Expense = () => {
           </>
         }
       />
-    </Motion.div>
+    </>
   );
 };
 

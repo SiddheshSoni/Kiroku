@@ -10,8 +10,10 @@ import InputForm from './UI/InputForm';
 export default function CalendarPanel({ ExpenseMode }) {
   const dispatch = useDispatch();
   const { todos:tasks  } = useSelector(state => state.todo);
+  const { expenses } = useSelector(state=> state.expense);
   const [showModal, setShowModal]= useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
+  const items = ExpenseMode ? expenses : tasks;
 
   useEffect(()=>{        
     dispatch(GetTodosThunk());
@@ -33,10 +35,13 @@ export default function CalendarPanel({ ExpenseMode }) {
         initialView={ExpenseMode ? "dayGridWeek" : "dayGridMonth"}
         height="auto"
         dateClick={handleDateClick}
-        events={tasks.map(task => ({
-          title: task.title,
-          date: task.date,
-          color: task.isCompleted ? "#22c55e" : "#3ab3e2"
+        events={items.map(item => ({
+          title: item.title,
+          date: item.date,
+          color: (!ExpenseMode && item.isCompleted ? "#22c55e" : "#3ab3e2"),
+          extendedProps:{
+            amount:item.amount
+          }
         }))}
       />
     </div>

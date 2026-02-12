@@ -14,8 +14,8 @@ const ExpensesList = ({expense, total, selectedMonth}) => {
             </div>
                 { expense && expense.map(exp =>(
                     <div className='expense-item' key={exp.id}>
-                        <div className='left'>🍔{exp.title} - {exp.amount}</div>
-                        <div>{exp.category}</div>
+                        <div className='left'> {exp.category.emoji} {exp.title} - {exp.amount}</div>
+                        <div>{exp.category.label}</div>
                         <div className="right">
                             {exp.date}
                         </div>

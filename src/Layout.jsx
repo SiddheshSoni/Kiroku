@@ -8,8 +8,8 @@ const Layout = () => {
   const location = useLocation();
   return (
     <>
-      <AnimatePresence >
         <TopHeader />
+      <AnimatePresence mode='wait' >
       <Outlet key={location.pathname}/>
       </AnimatePresence>
     </>

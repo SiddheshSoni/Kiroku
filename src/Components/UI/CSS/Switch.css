@@ -1,24 +1,35 @@
 .toggle-switch{
     position: relative;
     display: flex;
-
+    padding: 5px;
     background-color:  rgb(154, 154, 201);
     width: fit-content;
     border-radius: 20px;
+    height: 40px;
+}
+.toggle-switch button {
+  background: transparent;
+  border: none;
+  width: 80px;
+  height: 30px;
+  z-index: 1;
+  cursor: pointer;
 }
 
-.toggle-switch button{
-    background-color: transparent;
-    border: none;
-    padding: 5px 15px;
-    border-radius: 10px;
-    transition: all 2s ease;
-    z-index: 1;
+.pill {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 80px;
+  height: 30px;
+  background: white;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
 }
 
-.toggle-switch button.active{
-    background-color: white;
-    border-radius: 20px;
-    margin: 5px;
-    color: black;
+.pill.left{
+    transform: translateX(0%);
+}
+.pill.right{
+    transform: translateX(100%);
 }

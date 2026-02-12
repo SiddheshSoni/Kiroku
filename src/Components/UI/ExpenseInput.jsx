@@ -1,31 +1,37 @@
 import React, { useRef, useState } from 'react'
 import "./CSS/InputForm.css"
-import { Button, Col, Form, FormControl, FormGroup, FormLabel, Modal, Row } from 'react-bootstrap'
+import { Button, Col, Form, FormControl, FormGroup, FormLabel, FormSelect, Modal, Row } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { sendExpenseThunk } from '../../Store/expenseSlice'
-
+import { categories } from '../helper/Categories'
 const ExpenseInput = ({selectedDate="", closeModal}) => {
     const dispatch = useDispatch();
+    
+    const today = new Date().toLocaleDateString("en-CA");
 
-    const [inpDate, setDate] = useState(selectedDate);
+    const [inpDate, setDate] = useState(selectedDate || today);
     const titleRef =  useRef();
     const amountRef = useRef();
-    const categoryRef = useRef();
+    const [categoryId, setCategoryId] = useState("");
 
     const submitHandler = async (e) =>{
         e.preventDefault();
+
+        const selectedCat = categories.find( (c) => (c.id === categoryId));
+        console.log(selectedCat);
         const newExpense = {
             title : titleRef.current.value,
             amount : amountRef.current.value,
-            category : categoryRef.current.value,
+            category : {
+                emoji:selectedCat.emoji,
+                label:selectedCat.label,
+            },
             date : inpDate,
         };
         await dispatch(sendExpenseThunk(newExpense));
         console.log(newExpense);
         
     };
-
-    const today = new Date().toLocaleDateString("en-CA");
 
   return (
         <div className="cust-modal" onClick={closeModal}>
@@ -41,7 +47,18 @@ const ExpenseInput = ({selectedDate="", closeModal}) => {
                         <Row className='mb-2'>
                             <FormGroup as={Col}>
                                 <FormLabel>Category:</FormLabel>
-                                <FormControl type='text' ref={categoryRef} required/>
+                                <FormSelect 
+                                    value={categoryId}
+                                    onChange={(e)=> setCategoryId(Number(e.target.value))}
+                                    required    
+                                >
+                                    <option value="" disabled>Select Category</option>
+                                    {categories.map((cat)=>(
+                                        <option key={cat.id} value={cat.id}>
+                                            {cat.emoji} {cat.label}
+                                        </option>
+                                    ))}
+                                </FormSelect>
                             </FormGroup>
                         </Row>
                         <Row className='mb-2'>

@@ -6,7 +6,7 @@ const TopHeader = () => {
   return (
     <div className='top-header'>
         <div className="app-title">
-            App Name
+            Kiroku
         </div>
         <div className="mode-toggler">
             <Switch />

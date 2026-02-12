@@ -24,4 +24,4 @@ const Switch = () => {
   )
 }
 
-export default Switch
+export default Switch;
