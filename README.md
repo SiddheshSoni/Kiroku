@@ -1,16 +1,66 @@
-# React + Vite
+# 🦉 Kiroku
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal productivity dashboard to manage daily tasks and track monthly expenses — built with React, Redux Toolkit, and Firebase.
 
-Currently, two official plugins are available:
+Kiroku (記録) means “record” in Japanese.
+The app is designed with a clean, calm aesthetic focused on clarity and organization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+### 📝 Todo Management
+- Daily & regular tasks
+- Overdue detection
+- FullCalendar integration
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💰 Expense Tracking
+- Monthly filtering
+- Category grouping
+- Pie chart visualization
 
-## Expanding the ESLint configuration
+### 🔐 Authentication
+- Signup & Login
+- Persistent sessions
+- Protected routes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🎨 UI
+- Dark / Light mode
+- Japanese minimal design
+- Smooth animations
+
+## 🛠 Tech Stack
+
+- React (Vite)
+- Redux Toolkit
+- Firebase Realtime DB
+- FullCalendar
+- MUI Charts
+- Framer Motion
+
+## 🚀 Getting Started
+
+### Install
+npm install
+
+### Run
+npm run dev
+
+Create a .env file:
+
+VITE_FIREBASE_KEY=...
+VITE_BASE_URL =...
+
+## 🧠 Architecture Highlights
+
+- Global theme management using Redux + CSS variables
+- Async authentication using createAsyncThunk
+- Custom hooks for task & expense filtering
+- Reusable PageLayout pattern
+
+## 🔮 Future Improvements
+
+- Mobile responsiveness
+
+
+## 👤 Author
+Built by Siddhesh Soni
+
