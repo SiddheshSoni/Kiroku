@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import "./CSS/TopHeader.css";
 import { Button }from 'react-bootstrap';
 import Switch from './Switch';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector,  } from 'react-redux';
 import { UIActions } from '../../Store/UISlice';
 import { useNavigate } from 'react-router';
+import { AuthActions } from '../../Store/AuthSlice';
 
 const TopHeader = () => {
     const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const TopHeader = () => {
     };
     
     const logoutHandler = () =>{
+        dispatch(AuthActions.logout());
         localStorage.removeItem('user');
         localStorage.removeItem('idToken');
         navigate('/Welcome');

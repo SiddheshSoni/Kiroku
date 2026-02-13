@@ -1,0 +1,44 @@
+.username-wrapper {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background: radial-gradient(
+    circle at 30% 40%,
+    #2b2e4a 0%,
+    #1f2235 40%,
+    #151728 100%
+    );
+}
+.username-card{
+    width: 420px;
+    padding: 25px;
+    border-radius: 20px;
+    color: black;
+    background-color: #85cee4;
+}
+.username-card h3{
+    padding: 0px;
+}
+
+
+.top-part{
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  scale: 50%;
+}
+/* ////// */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+#welcome-logo{
+  animation: float 3s ease-in-out infinite;
+  height: 50%;
+}
+/* ////// */

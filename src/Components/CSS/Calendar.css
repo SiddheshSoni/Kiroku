@@ -21,7 +21,9 @@
     color: var(--text-primary) !important;
     
   }
-  
+  .fc-toolbar-title{
+    color: var(--text-primary);
+  }
   .fc-daygrid-day-number {
     color: var(--text-primary) !important;
     padding: 5px !important;

@@ -18,7 +18,7 @@ export const LoginThunk = createAsyncThunk(
     'auth/login',
     async({ email, password, authMode}, ThunkAPI)=>{
         console.log(authMode);
-        try{
+        try {
             const res = await Authenticate( email, password, authMode);
             
             if(!res.ok){
@@ -34,6 +34,14 @@ export const LoginThunk = createAsyncThunk(
 const AuthSlice = createSlice({
     name:'auth',
     initialState,
+    reducers: {
+        logout: (state) => {
+            state.idToken = null;
+            state.userId = null;
+            state.isLoggedIn = false;
+            state.error = null;
+        },
+    },
     extraReducers:(builder)=>{
         builder
             .addCase(LoginThunk.pending, (state)=>{
@@ -44,13 +52,14 @@ const AuthSlice = createSlice({
                 state.loading = false;
                 state.isLoggedIn = true;
                 state.idToken = action.payload.idToken;
-                if(action.payload.email){
-                    state.userId = action.payload.email.replace(/[.#$[\]]/g, "_");
-                }
+                state.userId = action.payload.userId; 
             })
             .addCase(LoginThunk.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })
     }
-})
+});
+
+export const AuthActions = AuthSlice.actions;
+export default AuthSlice.reducer;

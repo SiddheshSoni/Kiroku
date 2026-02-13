@@ -29,12 +29,26 @@ const RequestWrapper = async (path="streak.json", {method='GET', body=null}={}) 
         console.log(err);
     };
 };
+const getCurrentUser = () => { return localStorage.getItem('user')};
+
+const setUsername = async (username) =>{
+    const userId = getCurrentUser();
+    return await RequestWrapper(`/${userId}/username.json`, {method:'PUT', body: username});
+};
+
+const getUsername = async () =>{
+    const userId = getCurrentUser();
+    return await RequestWrapper(`/${userId}/username.json`, {method:'GET'});
+};
 
 const UpdateStreak = async (streak) =>{
-    return await RequestWrapper('streak.json', {method:'PATCH', body : streak })
-};
-const GetStreak = async () => {
-    return await RequestWrapper('streak.json', {method:'GET'});
+    const userId = getCurrentUser();
+    return await RequestWrapper(`/${userId}/streak.json`, {method:'PATCH', body : streak })
 };
 
-export { GetStreak , UpdateStreak};
+const GetStreak = async () => {
+    const userId = getCurrentUser();
+    return await RequestWrapper(`/${userId}/streak.json`, {method:'GET'});
+};
+
+export { GetStreak , UpdateStreak, setUsername, getUsername};

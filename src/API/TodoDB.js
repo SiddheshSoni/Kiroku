@@ -29,17 +29,23 @@ const RequestWrapper = async (path="todos.json", {method='GET', body=null}={}) =
     };
 };
 
+const getCurrentUser = () => { return localStorage.getItem('user')};
+
 const AddTodoDB = async (newTask) => {
-    return await RequestWrapper('todos.json', {method:'POST', body: newTask});
+    const userId = getCurrentUser();
+    return await RequestWrapper(`/${userId}/todos/.json`, {method:'POST', body: newTask});
 }
 const GetTodoDB = async () => {
-    return await RequestWrapper('todos.json', {method:'GET'});
+    const userId = getCurrentUser();
+    return await RequestWrapper(`/${userId}/todos/.json`, {method:'GET'});
 }
 const UpdateTodoDB = async (id, updatedFields) =>{
-    return await RequestWrapper(`/todos/${id}.json`, {method:'PATCH', body:updatedFields});
+    const userId = getCurrentUser();
+    return await RequestWrapper(`/${userId}/todos/${id}.json`, {method:'PATCH', body:updatedFields});
 }
 const DeleteTodoDB = async (id) =>{
-    return await RequestWrapper(`/todos/${id}.json`, {method:'DELETE'});
+    const userId = getCurrentUser();
+    return await RequestWrapper(`/${userId}/todos/${id}.json`, {method:'DELETE'});
 }
 
 export {AddTodoDB, GetTodoDB, UpdateTodoDB, DeleteTodoDB};

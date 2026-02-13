@@ -1,4 +1,4 @@
-import { GetStreak, UpdateStreak } from "../../API/streakDB";
+import { GetStreak, UpdateStreak } from "../../API/streak-userDB";
 
 export const handleStreakUpdate = async () => {
   const res = await GetStreak();

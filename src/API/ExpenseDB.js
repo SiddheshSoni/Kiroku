@@ -28,12 +28,15 @@ const RequestWrapper = async (path= 'expenses.json',{method='GET', body= null}={
         return {ok:false, error: error};
     }
 };  
+const getCurrentUser = () => { return localStorage.getItem('user')};
 
 const sendExpense = async (newExpense) =>{
-    return RequestWrapper('expenses.json', {method:'POST', body: newExpense})
+    const userId = getCurrentUser();
+    return RequestWrapper(`/${userId}/expenses.json`, {method:'POST', body: newExpense})
 };
 const getExpense = async () =>{
-    return RequestWrapper('expenses.json', {method:'GET'})
+    const userId = getCurrentUser();
+    return RequestWrapper(`/${userId}/expenses.json`, {method:'GET'})
 };
 
 export { sendExpense, getExpense };

@@ -6,8 +6,11 @@ import StickyBtn from "../Components/UI/stickyBtn";
 import RightHeader from "../Components/UI/RightHeader";
 import TopHeader from "../Components/UI/TopHeader";
 import { motion as Motion } from "framer-motion";
+
 const PageLayout = ({ left, right, ExpenseMode }) => {
+
   const [showModal, setShowModal] = useState(false);
+  
   const leftPanelVariants = {
     initial: { x: "-100%", opacity: 0 },
     animate: { x: 0, opacity: 1 },
@@ -52,7 +55,7 @@ const PageLayout = ({ left, right, ExpenseMode }) => {
           exit="exit"
           transition={{ duration: 0.35, ease: "easeOut" }}
         >
-            <RightHeader />
+            <RightHeader/>
           {right}
         </Motion.div>
       </div>

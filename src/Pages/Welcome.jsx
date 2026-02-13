@@ -16,7 +16,7 @@ const Welcome = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const submitHandler=(e)=>{
+    const submitHandler=async (e)=>{
         e.preventDefault();
     
         const email = emailRef.current.value.toLowerCase();
@@ -31,13 +31,13 @@ const Welcome = () => {
             }
         };
 
-        const result = dispatch(LoginThunk({ email, enteredPassword, authMode:isSignup}));
+        const result = await dispatch(LoginThunk({ email, password:enteredPassword, authMode:isSignup}));
 
         if(LoginThunk.rejected.match(result)){
             setError(result.payload);
         }else{
             console.log("User Successfully Signed Up!")
-            navigate("/Todo");
+            isSignup ? await navigate("/user") : await navigate('/Todo');
         }
     };
 

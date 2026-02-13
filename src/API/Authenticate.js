@@ -1,7 +1,6 @@
 const API_Key = import.meta.env.VITE_FIREBASE_KEY;
 
-const Authenticate = async (username, email, password, authMode) =>{
-    console.log(authMode);
+const Authenticate = async (email, password, authMode) =>{
     let authEndPoint = authMode ? "signUp" : "signInWithPassword";
 
     try{
@@ -29,11 +28,11 @@ const Authenticate = async (username, email, password, authMode) =>{
 
         localStorage.setItem('idToken', data.idToken);
         const userId = email.replace(/[.#$[\]]/g, "_");
-        localStorage.setItem('user', userId);
+        localStorage.setItem('user', userId); // Store the derived userId in localStorage
         
-        return{data: data, ok: true};
+        return{data: { ...data, userId: userId }, ok: true}; // Return derived userId in the data object
     }catch(error){
-        return {ok:false, error: error}
+        return {ok:false, error: error.message || "An unknown error occurred during authentication."} // Return error message
     }
 };
 
