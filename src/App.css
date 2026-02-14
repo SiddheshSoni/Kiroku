@@ -3,7 +3,13 @@ html, body, #root {
   margin: 0;
   overflow: hidden;
 }
-
+@media (max-width: 767px) {
+  html, body, #root {
+  height: 100vh;
+  margin: 0;
+  overflow: visible;
+}
+}
 body {
   display: flex;
   font-family: "Funnel Sans", sans-serif;

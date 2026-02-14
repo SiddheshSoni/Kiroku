@@ -17,8 +17,9 @@
 }
 .complete-btn{
     font-size:1.8rem;
-    color: rgb(197, 221, 161);
+    color: rgb(159, 218, 71);
 }
+
 .content{
     display: flex;
     flex-direction: column;

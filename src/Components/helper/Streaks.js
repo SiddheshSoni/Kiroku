@@ -16,9 +16,12 @@ export const handleStreakUpdate = async () => {
   } else {
     newStreak = 1;
   }
-
-  await UpdateStreak({
+  const streak = {
     currentStreak: newStreak,
     lastCompletedDate: today
-  });
+  };
+  const updateRes = await UpdateStreak(streak);
+  if (!updateRes.ok) {
+    console.error("Failed to update streak:", updateRes.error);
+  }
 };

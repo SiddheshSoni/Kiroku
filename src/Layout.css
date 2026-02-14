@@ -6,6 +6,7 @@
   grid-template-columns: 60% 40%;
   height: 100%;
 }
+
 .MainPage-Layout > div {
   min-height: 0;
 }
@@ -28,3 +29,35 @@
   bottom: 2px;
   z-index: 999;
 }
+.animate-mascot{
+  animation: maskot 2s ease;
+}
+
+@keyframes maskot {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-500px); }
+  100% { transform: translateY(0); }
+}
+
+  @media (max-width: 767px) {
+     .MainPage-Layout {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      max-width: 100vw;
+      overflow: visible;
+    }
+  
+    .cal-wrapper {
+      border-right: none;
+      border-bottom: 1px solid #E5E7EB;
+     
+    }
+  
+    .right-wrapper {
+      height: auto;
+    }
+    #logobg{
+    display: none;
+    }
+  }

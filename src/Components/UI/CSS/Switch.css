@@ -33,3 +33,18 @@
 .pill.right{
     transform: translateX(100%);
 }
+
+
+@media (max-width: 767px) {
+  .toggle-switch button {
+    background: transparent;
+    border: none;
+    width: 80px;
+    height: 30px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .toggle-switch:hover{
+    background-color: white;
+  }
+}
