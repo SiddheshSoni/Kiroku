@@ -5,6 +5,36 @@ A minimal productivity dashboard to manage daily tasks and track monthly expense
 Kiroku (記録) means “record” in Japanese.
 The app is designed with a clean, calm aesthetic focused on clarity and organization.
 
+# 📸 Screenshots
+
+## 🏠 Todo View
+
+<p align="center">
+  <img src="assets/Todo-light.png" width="45%" />
+  <img src="assets/Todo-dark.png" width="45%" />
+</p>
+
+---
+
+## 💰 Expense View
+
+<p align="center">
+  <img src="assets/Expense-light.png" width="45%" />
+  <img src="assets/Expense-dark.png" width="45%" />
+</p>
+
+---
+<details>
+<summary>➕ Additional Screens</summary>
+
+<br>
+
+<img src="assets/Addtask.png" width="700"/>
+<img src="assets/addExpense.png" width="700"/>
+<img src="assets/Signup.png" width="700"/>
+
+</details>
+
 ## ✨ Features
 
 ### 📝 Todo Management
