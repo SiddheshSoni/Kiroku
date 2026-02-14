@@ -10,8 +10,8 @@ The app is designed with a clean, calm aesthetic focused on clarity and organiza
 ## 🏠 Todo View
 
 <p align="center">
-  <img src="assets/Todo-light.png" width="45%" />
-  <img src="assets/Todo-dark.png" width="45%" />
+  <img src="src/assets/Todo-light.png" width="45%" />
+  <img src="src/assets/Todo-dark.png" width="45%" />
 </p>
 
 ---
@@ -19,8 +19,8 @@ The app is designed with a clean, calm aesthetic focused on clarity and organiza
 ## 💰 Expense View
 
 <p align="center">
-  <img src="assets/Expense-light.png" width="45%" />
-  <img src="assets/Expense-dark.png" width="45%" />
+  <img src="src/assets/Expense-light.png" width="45%" />
+  <img src="src/assets/Expense-dark.png" width="45%" />
 </p>
 
 ---
@@ -29,9 +29,9 @@ The app is designed with a clean, calm aesthetic focused on clarity and organiza
 
 <br>
 
-<img src="assets/Addtask.png" width="700"/>
-<img src="assets/addExpense.png" width="700"/>
-<img src="assets/Signup.png" width="700"/>
+<img src="src/assets/Addtask.png" width="700"/>
+<img src="src/assets/addExpense.png" width="700"/>
+<img src="src/assets/Signup.png" width="700"/>
 
 </details>
 
