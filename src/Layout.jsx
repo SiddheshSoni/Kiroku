@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router';
 import "./Layout.css";
 import { AnimatePresence } from 'framer-motion';
 import TopHeader from './Components/UI/TopHeader';
+import logo from "./assets/Kiroku.png";
 
 const Layout = () => {
   const location = useLocation();
@@ -13,11 +14,11 @@ const Layout = () => {
   };
   return (
     <>
-        <TopHeader animateMascot={animateMascotHandler} />
+      <TopHeader animateMascot={animateMascotHandler} />
       <AnimatePresence mode='wait' >
       <Outlet key={location.pathname}/>
       </AnimatePresence>
-      <img id='logobg' className={animate ? "animate-mascot" : ""} onAnimationEnd={()=> setAnimate(false)} src='/Kiroku.png' />
+      <img id='logobg' className={animate ? "animate-mascot" : ""} onAnimationEnd={()=> setAnimate(false)} src={logo} />
     </>
   )
 }

@@ -7,6 +7,7 @@ import { UIActions } from '../../Store/UISlice';
 import { useNavigate } from "react-router";
 import useMediaQuery from "@mui/material/useMediaQuery"; // optional but clean
 import { AuthActions } from '../../Store/AuthSlice';
+import logo from '../../assets/Kiroku.png'
 
 const TopHeader = ({ animateMascot }) => {
     const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const TopHeader = ({ animateMascot }) => {
   return (
     <div className='top-header'>
         <div className="app-title" onClick={animateMascot} >
-            <img id='logo' src='/Kiroku.png' />
+            <img id='logo' src={logo} />
             KIROKU.
         </div>
         <div className="mode-toggler">

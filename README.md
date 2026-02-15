@@ -2,6 +2,8 @@
 
 A minimal productivity dashboard to manage daily tasks and track monthly expenses — built with React, Redux Toolkit, and Firebase.
 
+🌐 **Live Demo:** [Open Kiroku](https://daily-todos-c93cd.web.app/)
+
 Kiroku (記録) means “record” in Japanese.
 The app is designed with a clean, calm aesthetic focused on clarity and organization.
 

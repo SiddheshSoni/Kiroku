@@ -4,6 +4,7 @@ import "./Welcome.css"
 import { useDispatch } from 'react-redux';
 import { LoginThunk } from '../Store/AuthSlice';
 import { useNavigate } from 'react-router';
+import logo from '../assets/Welcomelogo.png';
 
 const Welcome = () => {
     const [isSignup, setIsSignup] = useState(true);
@@ -45,7 +46,7 @@ const Welcome = () => {
     <>
         <div className="welcome-wrapper">
             <div className='left-part'>
-                <img id='welcome-logo' src='/KirokuFullLogo.png'/>
+                <img id='welcome-logo' src={logo} />
             </div>
             <div className="right-part">
 

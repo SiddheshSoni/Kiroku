@@ -3,6 +3,7 @@ import { Button, Form, FormControl, FormGroup, FormLabel, FormText, Row } from '
 import "./SetUser.css";
 import { setUsername } from '../API/streak-userDB';
 import { useNavigate } from 'react-router';
+import logo from '../assets/KirokuFullLogo.png';
 
 const SetUser = () => {
     const userRef = useRef();
@@ -22,7 +23,7 @@ const SetUser = () => {
   return (
     <>
         <div className="username-wrapper">
-                <img id='welcome-logo' src='/KirokuFullLogo.png'/>
+                <img id='welcome-logo' src={logo}/>
             <div className="username-card">
                 <h3>Set a Username</h3>
                 <Form onSubmit={submitHandler}>
