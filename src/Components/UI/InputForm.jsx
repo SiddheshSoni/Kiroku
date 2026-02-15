@@ -25,7 +25,7 @@ const InputForm = ({selectedDate="", closeModal}) => {
         };
         await dispatch(SendTodosThunk(newTodo));
         console.log(newTodo);
-        
+        closeModal();
     };
 
     // const now = new Date().toTimeString().slice(0,5);

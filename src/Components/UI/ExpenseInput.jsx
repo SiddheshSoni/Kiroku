@@ -31,6 +31,7 @@ const ExpenseInput = ({selectedDate="", closeModal}) => {
         await dispatch(sendExpenseThunk(newExpense));
         console.log(newExpense);
         
+        closeModal();
     };
 
   return (
@@ -68,7 +69,7 @@ const ExpenseInput = ({selectedDate="", closeModal}) => {
                             </FormGroup>
                             <FormGroup as={Col} >
                                 <FormLabel>Date:</FormLabel>
-                                <FormControl type='date' value={inpDate} min={today} onChange={(e)=> setDate(e.target.value)} required/>
+                                <FormControl type='date' value={inpDate} onChange={(e)=> setDate(e.target.value)} required/>
                             </FormGroup>
                         </Row>
                         <Row className='mb-1 mt-3'>
