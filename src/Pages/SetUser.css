@@ -42,3 +42,12 @@
   height: 50%;
 }
 /* ////// */
+
+@media (max-width: 767px) {
+  .username-wrapper{
+    width: 100%;
+  }
+  .username-card{
+    width: 70%;
+  }
+}

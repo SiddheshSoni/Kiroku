@@ -4,6 +4,7 @@ import { PieChart } from '@mui/x-charts/PieChart';
 // import { categories as cat } from './helper/Categories';
 
 const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
+  
   const months = ["Jan", "Feb" , "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const idx = Number(selectedMonth.slice(5, 7)) - 1;
 
@@ -23,7 +24,7 @@ const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
   return (
     <div className='expense-graph-wrapper'>
         <div className='exp-title-bar'>
-          <div className=''>Total spent in :  ₹{total} </div>
+          <div className='spent-tot'>Total spent in :  ₹{total} </div>
           <div className='title-bar-right'>
             <div>
               {months[idx]} {selectedMonth.slice(0, 4)}
@@ -44,8 +45,8 @@ const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
                 <PieChart  
                   series={[
                     {
-                      innerRadius:75,
-                      outerRadius:125,
+                      innerRadius: 65,
+                      outerRadius:115,
                       data:expense.map(item => ({
                         id: item.id,
                         value: item.total,
@@ -54,11 +55,21 @@ const ExpenseGraph = ({ expense, total, selectedMonth, setSelectedMonth }) => {
                     }
                   ]}
                   width={300}
-                  height={300}
+                  height={250}
+                  slotProps={{
+                  legend: {
+                    direction: 'row',
+                    position: {
+                      vertical: 'bottom',
+                      horizontal: 'middle',
+                    },
+                  },
+                }}
+
                 />
             </div>
+        {/* <div className='exp-title' ><span>Total:</span> <span className=' fw-bold'>  ₹{total}</span></div> */}
         </div>
-        <div className='exp-title' ><span>Total:</span> <span className=' fw-bold'>  ₹{total}</span></div>
     </div>
   )
 }

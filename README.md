@@ -20,9 +20,19 @@ The app is designed with a clean, calm aesthetic focused on clarity and organiza
 
 ## 💰 Expense View
 
-<p align="center">
+  <p align="center">
   <img src="src/assets/Expense-light.png" width="45%" />
   <img src="src/assets/Expense-dark.png" width="45%" />
+</p>
+
+---
+
+## 📱 Mobile View
+
+<p align="center">
+  <img src="src/assets/SignupMob.jpg" width="33%" />
+  <img src="src/assets/DarkMobCal.jpg" width="33%" />
+  <img src="src/assets/add.jpg" width="33%" />
 </p>
 
 ---

@@ -34,3 +34,9 @@
     overflow-y: auto;
     scrollbar-width:none;
 }
+
+@media (max-width: 767px) {
+  .fc-header-toolbar.fc-toolbar{
+    font-size: 0.9rem;
+  }
+}

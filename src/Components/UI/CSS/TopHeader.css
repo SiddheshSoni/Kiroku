@@ -4,12 +4,15 @@
     justify-content: space-between;
     flex: 1;
     height: 50px;
+    width: 100vw;
     padding: 0px 25px;
     background-color: var(--accent);
+    position: fixed;
+    z-index: 999;
 }
 
 .app-title{
-    font-family: "Noto Serif JP", serif;
+  font-family: "Noto Serif JP", serif;
   font-size: 1.6rem;
   letter-spacing: 4px;
   font-weight: 600;
@@ -81,20 +84,25 @@
 }
 
 @media (max-width: 767px) {
+    .top-header{
+        padding: 2px;
+        /* height: auto; */
+    }
     .app-title{
         font-family: "Noto Serif JP", serif;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         letter-spacing: 4px;
         font-weight: 600;
         color: var(--text-primary);
         cursor: pointer;
         display: inline-flex;
-        align-items: center;
+        align-items: center;        
+        padding-left: 10px;
     }
     #logo{
-        height: 50px;
-        width: auto;
+        display: none;
+    }
+    .logout-btn{
         margin-right: 10px;
     }
-    
 }

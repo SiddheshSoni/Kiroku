@@ -68,3 +68,16 @@
     top: 50%;
     transform: translateY(-50%);
 }
+@media (max-width: 767px) {
+  .welcome-wrapper{
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+    height: 100%;
+  }
+  .signup-form{
+    max-width: 70%;
+    padding: 20px;
+  }
+  
+}

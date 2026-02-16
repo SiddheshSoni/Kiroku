@@ -12,17 +12,24 @@ const ExpensesList = ({expense, total, selectedMonth}) => {
                 <h3>Expenses</h3>
                 <h5>{months[idx]} {selectedMonth.slice(0, 4)}</h5>
             </div>
-                { expense && expense.map(exp =>(
-                    <div className='expense-item' key={exp.id}>
-                        <div className='left'> {exp.category.emoji} {exp.title} - {exp.amount}</div>
-                        <div>{exp.category.label}</div>
-                        <div className="right">
-                            {exp.date}
-                        </div>
+                <div className="scrollable-area">
+                    {expense.length === 0 && <div> 
+                        <p>Add a Expense </p>
+                        <p>Track and manage expense</p>
                     </div>
-                ))}
-                <div className='expense-total'>Total: <span className=' fw-bold'>  ₹{total}</span></div>
-        </div>
+                    }
+                    { expense && expense.map(exp =>(
+                        <div className='expense-item' key={exp.id}>
+                            <div className='left'> {exp.category.emoji} {exp.title} - {exp.amount}</div>
+                            <div className='mid'>{exp.category.label}</div>
+                            <div className="right">
+                                {months[idx]} {exp.date.slice(8,10)}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            <div className='expense-total'>Total: <span className=' fw-bold'>  ₹{total}</span></div>
+            </div>
     </>
   )
 }

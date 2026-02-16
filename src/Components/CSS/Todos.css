@@ -6,10 +6,10 @@
     min-height: 0;
     scrollbar-width: thin;
     scroll-behavior: smooth;   
+    padding-top:10px ;
 }
 
 .todos h3{
-    
     padding: 5px 20px;
     text-align: start;
 }

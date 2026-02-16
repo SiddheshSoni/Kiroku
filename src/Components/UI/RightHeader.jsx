@@ -29,7 +29,7 @@ const RightHeader = () => {
         </div>
         
         <div className='streak'>
-            <span className=' fw-medium'>Streak</span> : {streak.currentStreak}🔥 
+            <span className=' fw-medium'>Streak</span> : {streak?.currentStreak || 0}🔥 
         </div>
         
     </div>

@@ -70,7 +70,7 @@ const TopHeader = ({ animateMascot }) => {
                 
             }
             <Button className='logout-btn' variant='primary' onClick={logoutHandler}>
-                Logout
+                {isMobile ? <i className="fa-solid fa-right-from-bracket"></i> :'Logout'}
             </Button>
         </div>
     </div>

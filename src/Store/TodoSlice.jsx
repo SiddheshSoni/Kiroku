@@ -32,7 +32,7 @@ export const GetTodosThunk = createAsyncThunk(
             if(!res.ok){
                 return ThunkAPI.rejectWithValue(res.error);
             }
-            const userTodos = Object.keys(res.data).map(id => ({id, ...res.data[id]}));
+            const userTodos = res.data ? Object.keys(res.data).map(id => ({id, ...res.data[id]})) : [];
             return userTodos; 
         }catch(error){
             return ThunkAPI.rejectWithValue(error);

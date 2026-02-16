@@ -8,6 +8,9 @@
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.12);
     font-size: 1.4rem;
     height: 60%;
+    
+    display: flex;
+    flex-direction: column;
 }
 .exp-title-bar{
     border-bottom: 1px solid #d5d9e0;
@@ -23,13 +26,8 @@
     font-weight: 500;
     align-items: center;
 }
-/* .btn-arr{
-    border: none;
-    border-radius: 5px;
-    height: 40px;
-    width: 30px;    
-    } */
-.MuiChartsLegend-vertical{
+
+.MuiChartsLegend-row{
     color: var(--text-primary) !important;
 }
 .btns {
@@ -46,12 +44,12 @@
   cursor: pointer;
 }
 
-
-
 .expense-ui{
     display: grid;
     grid-template-columns: 60% 40%;
     padding: 20px;
+    min-height: 0;
+    flex: 1;
 }
 
 .categorized-exp{
@@ -59,6 +57,12 @@
     padding: 25px;
     display: flex;
     flex-direction: column;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 120, 120, 0.4) transparent;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    min-height: 0;
+    flex: 1;
 }
 .exp-cat{
     display: flex;
@@ -66,17 +70,41 @@
     padding: 10px;
     border-bottom: 1px solid black;
 }
-
+.piechart{
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
 .exp-title{
     font-size: 1.6rem;
-    position: absolute;
+    align-self: center;
+    justify-self: center;
+    /* position: absolute;
     bottom: 5%;
-    right: 20%;
+    right: 50%; */
 }
 @media (max-width: 767px) {
     .expense-ui{
         display: flex;
         flex-direction: column;
-        padding: 20px;
+        /* padding: 20px; */
+    }
+    .categorized-exp{
+        margin: 0px;
+        padding: 0px;
+    }
+    .exp-title-bar{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items:  center;
+        gap: 10px;
+    }
+    .title-bar-right{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
 }
