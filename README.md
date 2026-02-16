@@ -30,9 +30,9 @@ The app is designed with a clean, calm aesthetic focused on clarity and organiza
 ## 📱 Mobile View
 
 <p align="center">
-  <img src="src/assets/SignupMob.jpg" width="33%" />
-  <img src="src/assets/DarkMobCal.jpg" width="33%" />
-  <img src="src/assets/add.jpg" width="33%" />
+  <img src="src/assets/SignupMob.jpg" width="30%" />
+  <img src="src/assets/DarkMobCal.jpg" width="30%" />
+  <img src="src/assets/add.jpg" width="30%" />
 </p>
 
 ---
